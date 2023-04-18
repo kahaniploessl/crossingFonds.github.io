@@ -1,12 +1,38 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+
+<html lang="en" >
+
   <head>
-    <meta charset="utf-8" />
-    <title>Basic Mirador</title>
+    <meta charset="UTF-8">
+    <title>Crossing Fonds - Mirador Test</title>
+    <!--Mirador Library-->
+    <script src="https://unpkg.com/mirador@latest/dist/mirador.min.js"></script>
+    <script src="https://unpkg.com/openseadragon@4.0.0/dist/openseadragon/openseadragon.min.js"></script>
+
+
+
   </head>
+
   <body>
-    <div id="demo"></div>
-    <script src="dist/main.js"></script>
+
+    <div id="my-mirador"></div>
+
   </body>
+
+  <script type='module'>
+
+
+     var miradorInstance = Mirador.viewer({
+       id: 'my-mirador',
+       theme: {
+         transitions: window.location.port === '4488' ?  { create: () => 'none' } : {},
+       },
+       catalog: [
+         { manifestId: 'https://crossingfonds.github.io/assets/JSON/ruthBullock.json' },
+         { manifestId: 'https://crossingfonds.github.io/assets/JSON/tenDollar.json' },
+       ]
+     });
+    
+  </script>
+
 </html>
- 

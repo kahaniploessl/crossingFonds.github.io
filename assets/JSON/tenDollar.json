@@ -1,0 +1,47 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "id": "https://iiif.io/api/cookbook/recipe/0003-mvm-video/manifest.json",
+  "type": "Manifest",
+  "label": {
+    "en": [
+      "Ten Dollars"
+    ]
+  },
+  "thumbnail": {
+      "id": "https://crossingfonds.github.io/assets/Thumbnails/tenDollar.png",
+      "type": "Image",
+      "width": 320,
+      "height": 240
+  },
+  "items": [
+    {
+      "id": "https://iiif.io/api/cookbook/recipe/0003-mvm-video/canvas",
+      "type": "Canvas",
+      "height": 360,
+      "width": 640,
+      "duration": 686,
+      "items": [
+        {
+          "id": "https://iiif.io/api/cookbook/recipe/0003-mvm-video/canvas/page",
+          "type": "AnnotationPage",
+          "items": [
+            {
+              "id": "https://iiif.io/api/cookbook/recipe/0003-mvm-video/canvas/page/annotation",
+              "type": "Annotation",
+              "motivation": "painting",
+              "body": {
+                "id": "https://crossingfonds.github.io/assets/Video/tenDollars.mp4",
+                "type": "Video",
+                "height": 360,
+                "width": 480,
+                "duration": 686,
+                "format": "video/mp4"
+              },
+              "target": "https://iiif.io/api/cookbook/recipe/0003-mvm-video/canvas"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
