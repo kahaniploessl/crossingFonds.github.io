@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+
+<html lang="en" >
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Crossing Fonds - Mirador Test</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@900&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- <script src="main.js"></script> -->
+
+  </head> 
+
+  <body>
+    <h1>Crossing Fonds</h1>
+    <h2>Sara Diamond's VIVO Collection - D3 Data Analysis</h2>
+
+    <svg id="bar" width="900" height="600"></svg>
+    <svg id="pie" width="400" height="500"></svg>
+    <svg id="scatter" width="1400" height="1000"></svg>
+
+    <style>
+
+      .bar {
+        fill: #335c67;
+        font-size: 30px;
+      }
+
+      .dot {
+        fill: #335c67;
+      }
+
+      #container {
+        height: 200px;
+        overflow: scroll;
+      }
+
+      h1 {
+        font-family: 'Anton', sans-serif;
+        font-size: 150px;
+        padding: 10px;
+        margin: 0;
+        letter-spacing: 30px;
+        position: relative;
+        z-index: 3;
+        line-height: 175px;
+        text-align: center;
+        
+      }
+
+      h2 {
+        font-family: 'Barlow', sans-serif;
+        font-size: 25px;
+        padding: 20px 0 0 90px;
+        margin: 0;
+        position: relative;
+        z-index: 3;
+      }
+
+      #pie {
+        position: relative;
+        top:-100px;
+      }
+
+      body {
+        background-color:#FDF7EC;
+        padding: 0;
+        margin: 0;
+      }
+
+    </style>
+
+
+
+    <script type="module">
+
+    import * as d3 from "https://cdn.jsdelivr.net/npm/d3@7/+esm";
+
+    const div = d3.selectAll("div");
+
+
+    // d3.csv("SDF_mini.csv", function(data) {
+    //   var table = d3.select("#container").append("table");
+
+    //   var headers = ['Title','Collection','MediaType','PhysicalFormat','Generations','DateofOriginalWork','Description']
+
+    //   var thead = table.append("thead").append("tr")
+    //     .selectAll("th")
+    //     .data(headers)
+    //     .enter()
+    //     .append("th")
+    //     .text(function(d) { return d; });
+
+    //   var tbody = table.append("tbody");
+    //   var rows = tbody.selectAll("tr")
+    //     .data(data)
+    //     .enter()
+    //     .append("tr");
+      
+    //   var index = -1; // Start index at -1 to offset the header row
+    //   var cells = rows.selectAll("td")
+    //     .data(function(row) {
+    //       index++;
+    //       return headers.map(function(header) {
+    //         return {column: header, value: row[header], index: index};
+    //       });
+    //     })
+    //     .enter()
+    //     .append("td")
+    //     .text(function(d) { return d.index === d.value ? "" : d.value; });
+
+    // });
+
+    function year (data) {
+      return data.DateofOriginalWork.substring(0,4);
+    }
+
+    d3.csv("SDF_mini.csv").then(function(data) {
+
+        const yearArray = new Array;
+        let item = new Array;
+        for (let i=0;i<data.length;i++) {
+
+          var date;
+
+          var y = year(data[i]);
+          if (y=="") {
+            y = 0;
+          }
+          item = [y,i];
+          yearArray.push(item);
+
+          console.log(yearArray[i]);
+          
+        }
+
+        var svg3 = d3.select("#scatter"),
+            margin = 200,
+            width = svg3.attr("width") - margin,
+            height = svg3.attr("height") - margin
+
+        var xScale = d3.scaleLinear().domain([1980, 2010]).range([0, width]),
+            yScale = d3.scaleLinear().domain([0,1000]).range([height, 0]);
+
+        var g = svg3.append("g")
+                  .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+        // Step 5
+        // Title
+        svg3.append('text')
+        .attr('x', width/2 + 100)
+        .attr('y', 100)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 20)
+        .text('Year Distribution');
+        
+        // X label
+        svg3.append('text')
+        .attr('x', width/2 + 100)
+        .attr('y', height - 15 + 150)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text('Year');
+        
+        // Y label
+        svg3.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(60,' + 500 + ')rotate(-90)')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text('Item #');
+
+        g.append("g")
+         .attr("transform", "translate(0," + height + ")")
+         .call(d3.axisBottom(xScale));
+        
+        g.append("g")
+         .call(d3.axisLeft(yScale));
+
+        svg3.append('g')
+          .selectAll(".dot")
+          .data(yearArray)
+          .enter()
+          .append("circle")
+          .attr("cx", function (d) { return xScale(d[0]); } )
+          .attr("cy", function (d) { return yScale(d[1]); } )
+          .attr("r", 5)
+          .attr("transform", "translate(" + 100 + "," + 100 + ")")
+          .style("fill", "rgba(1,151,200,0.5)");
+
+
+    })
+
+    function gen (data) {
+      return data.Generations;
+    }
+
+    function genAnalysis(data) {
+
+      let genOriginal = 0;
+      let genEmpty = 0;
+      let genCopy = 0;
+      let genDub = 0;
+      let genSubmaster = 0;
+      let genTapes = 0;
+      let genRough = 0;
+
+      let genOther = 0;
+      
+      for (let i=0;i<data.length;i++) {
+        
+        if (gen(data[i])=="Original") {
+          genOriginal+=1;
+        } else if (gen(data[i])=="Copy"||gen(data[i])=="Copy: preservation"||gen(data[i])=="Copy: access") {
+          genCopy+=1;
+        } else if (gen(data[i])=="") {
+          genEmpty+=1;
+        } else if (gen(data[i])=="Dub") {
+          genDub+=1;
+        } else if (gen(data[i])=="Submaster") {
+          genSubmaster+=1;
+        } else if (gen(data[i])=="Work tapes") {
+          genTapes+=1;
+        } else if (gen(data[i])=="Rough cut") {
+          genRough+=1;
+        } else 
+          genOther+=1;
+      }
+      
+      let o1 = {
+        name: "Original",
+        value: genOriginal
+      };
+
+      let o2 = {
+        name: "Copy",
+        value: genCopy
+      };
+
+      let o3 = {
+        name: "Dub",
+        value: genDub
+      };
+
+      let o4 = {
+        name: "Submaster",
+        value: genSubmaster
+      };
+
+      let o5 = {
+        name: "Work Tapes",
+        value: genTapes
+      };
+      
+      let o6 = {
+        name: "Rough Cuts",
+        value: genRough
+      };
+
+      let o7 = {
+        name: "Other",
+        value: genOther
+      };
+      
+      let o8 = {
+        name: "Undefined",
+        value: genEmpty
+      };
+
+      let genArray = [o1,o2,o3,o4,o5,o6,o7,o8];
+
+      return (genArray);
+    }
+
+
+    function media (data) {
+      return data.MediaType;
+    }
+
+    function mediaAnalysis(data) {
+
+      let mediaImage = 0;
+      let mediaEmpty = 0;
+      let mediaSound = 0;
+      let mediaOther = 0;
+      
+      for (let i=0;i<data.length;i++) {
+        
+        if (media(data[i])=="Moving Image") {
+          mediaImage+=1;
+        } else if (media(data[i])=="") {
+          mediaEmpty+=1;
+        } else if (media(data[i])=="Sound") {
+          mediaSound+=1;
+        } else 
+          mediaOther+=1;
+      }
+      
+      let o1 = {
+        name: "Moving Image",
+        value: mediaImage
+      };
+
+      let o2 = {
+        name: "Sound",
+        value: mediaSound
+      };
+
+      let o3 = {
+        name: "Undefined",
+        value: mediaEmpty
+      };
+
+      let o4 = {
+        name: "Other",
+        value: mediaOther
+      };
+
+      let mediaArray = [o1,o2,o3,o4];
+
+      return (mediaArray);
+    }
+
+
+
+
+    d3.csv("SDF_mini.csv").then(function(data) {
+      // return data;
+      // genAnalysis(data)
+      var dataOutput = genAnalysis(data);
+      var dataOutput2 = mediaAnalysis(data);
+
+
+
+      // bar graph
+
+      var svg = d3.select("#bar"),
+        margin = 200,
+        width = svg.attr("width") - margin,
+        height = svg.attr("height") - margin;
+
+
+      var xScale = d3.scaleBand().range ([0, width]).padding(0.4),
+          yScale = d3.scaleLinear().range ([height, 0]);
+
+      var g = svg.append("g")
+                 .attr("transform", "translate(" + 100 + "," + 100 + ")");
+
+      xScale.domain(dataOutput.map(function(d) { return d.name; }));
+      yScale.domain([0, d3.max(dataOutput, function(d) { return d.value; })]);
+
+      // Title
+        svg.append('text')
+        .attr('x', width/2 + 100)
+        .attr('y', 100)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 20)
+        .text('Generation Type');
+        
+        // X label
+        svg.append('text')
+        .attr('x', width/2 + 100)
+        .attr('y', height - 15 + 150)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text('Type');
+        
+        // Y label
+        svg.append('text')
+        .attr('text-anchor', 'middle')
+        .attr('transform', 'translate(60,' + 310 + ')rotate(-90)')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 12)
+        .text('Units');
+      g.append("g")
+        .attr("transform", "translate(0," + height + ")")
+        .call(d3.axisBottom(xScale));
+
+      g.append("g")
+        .call(d3.axisLeft(yScale).tickFormat(function(d){
+             return d;
+         }).ticks(10))
+
+      g.selectAll(".bar")
+         .data(dataOutput)
+         .enter().append("rect")
+         .attr("class", "bar")
+         .attr("x", function(d) { return xScale(d.name); })
+         .attr("y", function(d) { return yScale(d.value); })
+         .attr("width", xScale.bandwidth())
+         .attr("height", function(d) { return height - yScale(d.value); });
+
+
+      // pie chart
+
+      let pieData = dataOutput2.map(a => a.value);
+      console.log(pieData);
+
+      var svg2 = d3.select("#pie"),
+          width = svg2.attr("width"),
+          height = svg2.attr("height"),
+          radius = Math.min(width, height) / 2,
+          g = svg2.append("g")
+
+              .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+      var color = d3.scaleOrdinal(['#9e2a2b','#e09f3e','#540b0e','#984ea3','#e41a1c']);
+
+      // Generate the pie
+      var pie = d3.pie();
+
+      // Generate the arcs
+      var arc = d3.arc()
+                  .innerRadius(0)
+                  .outerRadius(radius);
+
+      //Generate groups
+      var arcs = g.selectAll("arc")
+                  .data(pie(pieData))
+                  .enter()
+                  .append("g")
+                  .attr("class", "arc")
+
+      //Draw arc paths
+      arcs.append("path")
+          .attr("fill", function(d, i) {
+              return color(i);
+          })
+          .attr("d", arc);
+
+
+      svg2.append('text')
+        .attr('x', width/2)
+        .attr('y', 30)
+        .attr('text-anchor', 'middle')
+        .style('font-family', 'Helvetica')
+        .style('font-size', 20)
+        .text('Media Type');
+
+
+    });
+
+
+
+    </script>
+
+
+  </body>
+
+
+</html>
