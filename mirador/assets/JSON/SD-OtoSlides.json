@@ -1,0 +1,77 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "http://example.org/iiif/book1/manifest",
+  "@type": "sc:Manifest",
+  "label": "SD Oto Slides",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": "Sara Diamond"
+    },
+    {
+      "label": "Date",
+      "value": "2023-03-7"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "http://example.org/iiif/book1/sequence/normal",
+      "@type": "sc:Sequence",
+      "label": "Normal Sequence",
+      "canvases": [
+
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p1",
+          "@type": "sc:Canvas",
+          "label": "SD Oto Slides 109-148-Political Actions (2) Box 109-001",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/mirador/assets/Photos/SDOtoSlides109-148.tif",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p1"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p2",
+          "@type": "sc:Canvas",
+          "label": "SD Oto Slides 149-162-Miscellaneous-Box 109-008",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/mirador/assets/Photos/SDOtoSlides149-162.tif",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p2"
+            }
+          ]
+        }
+
+
+      ]
+    }
+  ]
+}
+
