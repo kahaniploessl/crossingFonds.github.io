@@ -1,0 +1,582 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "http://example.org/iiif/book1/manifest",
+  "@type": "sc:Manifest",
+  "label": "Box26-08-001",
+  "metadata": [
+    {
+      "label": "Author",
+      "value": "Sara Diamond"
+    },
+    {
+      "label": "Date",
+      "value": "2023-03-7"
+    }
+  ],
+  "sequences": [
+    {
+      "@id": "http://example.org/iiif/book1/sequence/normal",
+      "@type": "sc:Sequence",
+      "label": "Normal Sequence",
+      "canvases": [
+
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p1",
+          "@type": "sc:Canvas",
+          "label": "Page 1",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-1.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p1"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p2",
+          "@type": "sc:Canvas",
+          "label": "Page 2",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-2.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p2"
+            }
+          ]
+        },
+
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 3",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-3.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 4",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-4.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 5",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-5.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 6",
+          "height": 1500,
+          "width": 1000,
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-6.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 7",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-7.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 8",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-8.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 9",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-9.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 10",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-10.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 11",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-11.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 12",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-12.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 13",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-13.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 14",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-14.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 15",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-15.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 16",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-16.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 17",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-17.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 18",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-18.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 19",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-19.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 20",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-20.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 21",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-21.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 22",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-22.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        },
+
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p3",
+          "@type": "sc:Canvas",
+          "label": "Page 23",
+          "height": 1500,
+          "width": 1000,
+
+         
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-23.pdf",
+                "@type": "dctypes:Image",
+                "format": "image/jpeg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p3"
+            }
+          ]
+        }
+
+
+      ]
+    }
+  ]
+}
+

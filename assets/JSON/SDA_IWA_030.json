@@ -1,0 +1,37 @@
+{
+  "@context": "http://iiif.io/api/presentation/3/context.json",
+  "@id": "http://example.org/iiif/book1/manifest",
+  "@type": "sc:Manifest",
+  "label": "SDA_IWA_030",
+  "sequences": [
+    {
+      "@id": "http://example.org/iiif/book1/sequence/normal",
+      "@type": "sc:Sequence",
+      "label": "Normal Sequence",
+      "canvases": [
+        {
+          "@id": "http://example.org/iiif/book1/canvas/p1",
+          "@type": "sc:Canvas",
+          "label": "SDA_IWA_030",
+          "height": 1500,
+          "width": 1000,
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "https://crossingfonds.github.io/assets/Photos/SDA_IWA_030.jpg",
+                "@type": "dctypes:Image",
+                "format": "image/jpg",
+                "height": 1500,
+                "width": 1000
+              },
+              "on": "http://example.org/iiif/book1/canvas/p1"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
+ 
