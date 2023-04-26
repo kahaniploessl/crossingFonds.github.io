@@ -1,0 +1,57 @@
+{
+"@context": "http://iiif.io/api/presentation/2/context.json",
+"@id": "http://example.org/iiif/book1/manifest",
+"@type": "sc:Manifest",
+"label": "Box26-08-001",
+"metadata": [
+{
+"label": "Author",
+"value": "Sara Diamond"
+},
+{
+"label": "Date",
+"value": "2023-03-7"
+}
+],
+"sequences": [
+{
+"@id": "http://example.org/iiif/book1/sequence/normal",
+"@type": "sc:Sequence",
+"label": "Normal Sequence",
+"canvases": [
+{
+"@id": "http://example.org/iiif/book1/canvas/p1",
+"@type": "sc:Canvas",
+"label": "Page 1",
+"height": 1500,
+"width": 1000,
+"images": [
+{
+"@type": "oa:Annotation",
+"motivation": "sc:painting",
+"resource": {
+"@id": "https://crossingfonds.github.io/assets/Documents/Box26/Box26-08-001-1.pdf",
+"@type": "dctypes:Image",
+"format": "image/jpeg",
+"height": 1500,
+"width": 1000
+},
+"on": "http://example.org/iiif/book1/canvas/p1",
+"resource": {
+"@type": "cnt:ContentAsText",
+"chars": "This is some text from page 1."
+}
+}
+],
+"seeAlso": [
+{
+"@id": "http://example.org/iiif/book1/canvas/p1/alto.xml",
+"@type": "dctypes:Text",
+"format": "application/xml+alto"
+}
+]
+}
+]
+}
+]
+}
