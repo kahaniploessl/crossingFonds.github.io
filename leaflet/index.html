@@ -1,226 +1,31 @@
 <!DOCTYPE html>
-
-<html lang="en" >
-
+<html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <title>Crossing Fonds - Leaflet</title>
-   
-     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
-     <!-- <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script> -->
+    <title>Leaflet.DistortableImage Example</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta http-equiv="x-ua-compatible" content="ie=edge"/>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com"> 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Barlow+Condensed:wght@900&family=Titillium+Web:wght@300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./dist/leaflet.css">
+    <link rel="stylesheet" href="./dist/vendor.css">
+    <link rel="stylesheet" href="./dist/leaflet.distortableimage.css" media="screen" title="no title">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
 
-
+    <script src="./dist/leaflet.js" type="text/javascript" charset="utf-8"></script>
+    <script src="./dist/vendor.js"></script>
+    <script src="./dist/leaflet.distortableimage.js"></script>
+    <script src="./index.js" defer></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<key>&libraries=places"></script>
+    <script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
   </head>
 
-  <body>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-
-
-    <h1>Crossing Fonds</h1>
-
-     <div id="map" style="height: 1000px;"></div>
-
-    <script type="text/javascript">
-
-      // BASIC SETUP
-      // var map = L.map('map').setView([39.61, -105.02], 7);
-
-      // L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      //     maxZoom: 19,
-      //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      // }).addTo(map);
-
-      // LAYER/TOGGLE MARKERS
-      // var A = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('A'),
-      //     B    = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('B'),
-      //     C    = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('C'),
-      //     D    = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('D');
-
-      // var groupOne = L.layerGroup([A, B, C, D]);
-
-      // var E = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('E'),
-      //     F    = L.marker([39+Math.random(), -105+Math.random()]).bindPopup('F');
-
-      // var groupTwo = L.layerGroup([E, F]);
-
-      // var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      //     maxZoom: 19,
-      //     attribution: '© OpenStreetMap'
-      // });
-
-      // var map = L.map('map', {
-      //     center: [39.73, -104.99],
-      //     zoom: 10,
-      //     layers: [osm, groupOne, groupTwo]
-      // });
-
-      // var baseMap = {
-      //     "OpenStreetMap": osm
-      // };
-
-      // var map1 = {
-      //     "Group 1": groupOne,
-      //     "Group 2": groupTwo
-      // };
-
-      // var layerControl = L.control.layers(baseMap, map1).addTo(map);
-
-      //IMAGE ON MAP
-      
-
-      // var map = L.map('map').setView([37.8, -96], 4);
-
-      // var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      //     maxZoom: 19,
-      //     attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      // }).addTo(map);
-
-      // var imageUrl = 'https://maps.lib.utexas.edu/maps/historical/newark_nj_1922.jpg';
-      // var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
-      // var altText = 'Image of Newark, N.J. in 1922. Source: The University of Texas at Austin, UT Libraries Map Collection.';
-      // var latLngBounds = L.latLngBounds([[40.799311, -74.118464], [40.68202047785919, -74.33]]);
-
-      // var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
-      //     opacity: 0.8,
-      //     errorOverlayUrl: errorOverlayUrl,
-      //     alt: altText,
-      //     interactive: true
-      // }).addTo(map);
-
-
-
-      // L.rectangle(latLngBounds).addTo(map);
-      // map.fitBounds(latLngBounds);
-
-
-      //IMAGE GROUP
-
-      var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-          maxZoom: 19,
-          attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-      });
-
-      var imageX_00 = 40.799311;
-      var imageX_01 = 40.68202047785919;
-      var imageY_00 = -74.118464;
-      var imageY_01 = -74.33;
-
-      var imageUrl = 'assets/Photos/image0.jpg';
-      // var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
-      var altText = 'CF Image 0';
-      var latLngBounds = L.latLngBounds([[imageX_00, imageY_00], [imageX_01, imageY_01]]);
-
-      var imageUrl2 = 'assets/Photos/image1.jpg';
-      // var errorOverlayUrl = 'https://cdn-icons-png.flaticon.com/512/110/110686.png';
-      var altText2 = 'CF Image 1';
-      var latLngBounds2 = L.latLngBounds([[40.999311, -74.318464], [40.88202047785919, -74.53]]);
-
-      var x = new Float32Array(6);
-      var y = new Float32Array(6);
-
-      for (let i =0;i<6;i++){
-        x[i]=41-Math.random()*0.1;
-        y[i]=-75+Math.random()*0.5;
-        
-      }
-
-      var A = L.marker([x[0], y[0]]).bindPopup('A'),
-          B = L.marker([x[1], y[1]]).bindPopup('B'),
-          C = L.marker([x[2], y[2]]).bindPopup('C'),
-          D = L.marker([x[3], y[3]]).bindPopup('D');
-
-      var groupOne = L.layerGroup([A, B, C, D]);
-
-
-
-
-      var E = L.marker([x[4], y[4]]).bindPopup('E'),
-          F = L.marker([x[5], y[5]]).bindPopup('F');
-
-      var groupTwo = L.layerGroup([E, F]);
-
-
-
-
-      var imageOverlay = L.imageOverlay(imageUrl, latLngBounds, {
-          opacity: 0.8,
-
-          // errorOverlayUrl: errorOverlayUrl,
-          alt: altText,
-          interactive: true,
-          zindex:3
-      }).bindPopup('Image 1')
-
-      var imageOverlay2 = L.imageOverlay(imageUrl2, latLngBounds2, {
-          opacity: 0.8,
-
-          // errorOverlayUrl: errorOverlayUrl,
-          alt: altText2,
-          interactive: true
-      }).bindPopup('The Working Image')
-
-      var photos = L.layerGroup([imageOverlay, imageOverlay2]);
-
-
-      var map = L.map('map', {
-          center: [40.899311, -74.518464],
-          zoom: 11,
-          layers: [osm, photos, groupOne, groupTwo]
-      });
-      
-
-      //L.rectangle(latLngBounds).addTo(map);
-      //map.fitBounds(latLngBounds);
-
-      var baseMap = {
-          "OpenStreetMap": osm
-      };
-
-      var map1 = {
-          "Group 1": groupOne,
-          "Group 2": groupTwo,
-          "Images": photos
-      };
-
-      var polygon = L.polygon([
-          [x[0],y[0]],
-          [(imageX_00+imageX_01)/2, (imageY_01+imageY_00)/2]
-      ]).addTo(map);
-
-      var layerControl = L.control.layers(baseMap, map1).addTo(map);
-
-      
-
-
-
-      //EVENTS
-
-      // function onMapClick(e) {
-      //     alert("SD-01-01-0066 Box 33-09-001 ");
-      // }
-
-      // imageOverlay.on('click', onMapClick);
-
-      // function onMapClick2(e) {
-      //     alert("TheWorkingImage_24 ");
-      // }
-
-      // imageOverlay2.on('click', onMapClick2);
-
-
-
-
-    </script>
-
-    <style>
-/*       #map { height: 500px; }*/
-    </style>
-
+  <body style="margin:0;">
+    <form id="test_form">
+      <input type="file" class="ldi" id="inputimage" accept="image/*" />
+    </form>
+    <div id="map" style="width:100%; height:100%; position:absolute; top:0;"></div>
   </body>
 
+  
 </html>
+
